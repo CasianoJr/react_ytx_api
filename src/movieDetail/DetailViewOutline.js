@@ -11,12 +11,17 @@ export default function DetailViewOutline(props) {
     const [urlRequest, setUrlRequest] = useState(`movie_details.json?movie_id=${movie_id}&with_images=${endPoints.with_images}&with_cast=${endPoints.with_cast}`)
     const [data] = Api({ urlRequest, state, setState });
     const [movie, setMovie] = useState()
+    
+    useEffect(() => {
+        setState(rest => { return { ...rest, searchLoading: true } })
+    }, [setState])
 
     useEffect(() => {
         setUrlRequest(
             `movie_details.json?movie_id=${movie_id}&with_images=${endPoints.with_images}&with_cast=${endPoints.with_cast}`
         );
-    }, [movie_id, state])
+
+    }, [movie_id])
 
     useEffect(() => {
         data ? setMovie(data.movie) : setMovie(null)
