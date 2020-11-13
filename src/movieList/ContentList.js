@@ -3,6 +3,8 @@ import youtubeIcon from '../icons/youtubeIcon.webp';
 import magnetTorrent from '../icons/magnetTorrent.png';
 import { Image } from 'antd';
 import { Tooltip } from 'antd';
+import { Link } from "react-router-dom";
+
 
 export default function ContentList({ movie }) {
 
@@ -10,13 +12,15 @@ export default function ContentList({ movie }) {
 
     return (
         <div className="col-lg-2 col-md-3 col-sm-4 m-lg-3 m-md-2 p-0" >
+                <Link to={movie.id.toString()} >
             <div className="text-center mx-sm-3">
                 <Image src={movie.large_cover_image} className="w-100 px-sm-2 px-md-0 px-3"
                     fallback={imageFallback} />
               </div>
             <div className="my-1">
-                <div className="text-white h6 text-center m-0"><a href={movie.id}>{movie.title}</a></div>
+                <div className="text-white h6 text-center m-0">{movie.title}</div>
             </div>
+                </Link>
             <div>
                 <div className="text-muted text-center justify-content-between d-flex mx-md-1 mx-5">
                     <span >{movie.year}</span>
