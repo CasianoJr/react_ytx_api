@@ -14,9 +14,6 @@ const SearchForNavBar = () => {
     }
     return (
         <>
-            <div className="btn mb-1" type="button" data-toggle="collapse" data-target="#detailedSearch" aria-controls="detailedSearch" aria-expanded="false" aria-label="Toggle navigation">
-                <ExpandOutlined className="text-white" />
-            </div>
             <Search
                 placeholder="Search Movies"
                 allowClear
@@ -25,6 +22,9 @@ const SearchForNavBar = () => {
                 style={{ width: 300, margin: '0 10px' }}
                 loading={state.searchLoading}
             />
+            <div className="btn mb-1" type="button" data-toggle="collapse" data-target="#detailedSearch" aria-controls="detailedSearch" aria-expanded="false" aria-label="Toggle navigation">
+                <ExpandOutlined className="text-white" />
+            </div>
         </>
     )
 }
