@@ -8,9 +8,9 @@ export default function NavigationBar() {
     <>
       <FrameForNavBar>
         <ul className="nav nav-pills mr-auto">
-          <li className="nav-item active">
+          {/* <li className="nav-item active">
             <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-          </li>
+          </li> */}
         </ul>
         <div className="form-inline my-2 mx-auto my-lg-0">
           <SearchForNavBar />

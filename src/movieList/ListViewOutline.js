@@ -41,22 +41,19 @@ export default function ListOutline({ history }) {
     return (
         <div>
             {movies ? <>
-                <div className="card-deck mx-sm-2 text-center">
+                <div className="card-deck text-center mx-sm-3">
                     {movies.map((movie, idx) => <ContentList key={idx} movie={movie} />)}
                 </div>
-                {data.movie_count &&
                 <Pagination
-                total={data.movie_count}
-                showTotal={total => `Total ${total} items`}
-                defaultPageSize={state.limit}
-                defaultCurrent={3}
-                current={state.page} 
-                onChange={onChange}
-                className="mx-auto text-center bg-white col-lg-8 rounded py-2 font-weight-bold"
-                responsive={true}
+                    total={data.movie_count}
+                    showTotal={total => `Total ${total} items`}
+                    defaultPageSize={state.limit}
+                    defaultCurrent={3}
+                    current={state.page}
+                    onChange={onChange}
+                    className="mx-auto text-center bg-white col-lg-8 rounded py-2 font-weight-bold"
+                    responsive={true}
                 />
-            }
-                
             </>
                 : <EmptyData />
             }
